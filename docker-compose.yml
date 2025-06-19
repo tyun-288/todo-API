@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=mysql://root:root@host.docker.internal:8889/todo
+    command: sh -c "npx prisma generate && npm run build && npm start"
