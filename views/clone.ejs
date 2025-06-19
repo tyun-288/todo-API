@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<htGET>
+    <head>
+        <meta charset="utf-8">
+        <title>due_setting</title>
+    </head>
+    <body>
+        <header>
+            <a href='/' class="header-logo">MY todos</a>
+        </header>
+
+        <div class="container">
+            <h1>期日を指定してください</h1>
+            <form action="/clone/<%=todo.id%>" method="POST">
+                <input type="date" name="due_date">
+                <button type="submit">決定</button>
+            </form>
+            <div class="back">
+                <a href='/'>戻る</a>
+            </div>
+        </div>
+    </body>
+</htGET

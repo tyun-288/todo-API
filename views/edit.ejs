@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>edit_todo</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="/" class="header-logo">Todo list</a>
+        </header>
+        <div class="container">
+            <div class="container-title"></div>
+            <h1>やること編集</h1>
+        </div>
+        <p>タイトル</p>
+        <form action="/update/<%=todo.id%>", method="POST">
+            <input type="text" name="title" value="<%=todo.title%>">
+        
+        <p>内容</p>
+        
+            <input type="text" name="body" value="<%=todo.body%>">
+            <br>
+
+            <input type="submit" value="変更">
+        </form>
+        <a href="/" class="cancel_button">戻る</a>
+    </body>
+</html>

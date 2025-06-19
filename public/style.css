@@ -1,0 +1,13 @@
+.title-column {
+    font-weight:bold;
+    font-size: 30px;
+    
+}
+.contents-column {
+    font-size:15px;
+}
+
+.item-data {
+    border-bottom: 2px solid black;
+}
+

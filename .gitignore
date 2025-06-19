@@ -1,0 +1,10 @@
+# Node modules & build output
+node_modules/
+dist/
+
+# Prisma artifacts (auto-generated client)
+.prisma/
+.env
+
+# If you use VSCode
+.vscode/
