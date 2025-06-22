@@ -1,6 +1,15 @@
-version: "3.9"
 
 services:
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo
+    volumes:
+      - db_data:/var/lib/mysql
+
   app:
     build: .
     ports:
@@ -8,5 +17,10 @@ services:
     volumes:
       - .:/app
     environment:
-      - DATABASE_URL=mysql://root:root@host.docker.internal:8889/todo
+      - DATABASE_URL=mysql://root:root@db:3306/todo
+    depends_on:
+      - db
     command: sh -c "npx prisma generate && npm run build && npm start"
+
+volumes:
+  db_data:
